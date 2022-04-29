@@ -1,8 +1,8 @@
 import styledComponents from "styled-components";
 
 export const ErrorMsg = styledComponents.p`
-font-size: 0.75rem;
-margin: 0;
+    font-size: 0.75rem;
+    margin: 0;
 `;
 
 export const MinterDIV = styledComponents.div`
