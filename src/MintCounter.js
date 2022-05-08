@@ -8,7 +8,7 @@ const MintCounter = () => {
     const [maxSupply, setMaxSupply] = useState(0);
     const [currentSupply, setCurrentSupply] = useState(0);
 
-    const contractAddress = '0x5Af0D9827E0c53E4799BB226655A1de152A425a5'; // NFT address (Miladys)
+    const contractAddress = '0xA37383d111a35B29689055AFA92c79b58BB33497'; // NFT address (Miladys)
 
 
     async function getSupply() {
@@ -18,8 +18,8 @@ const MintCounter = () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const contract = new ethers.Contract(contractAddress, abi, provider);
 
-        const max = await contract.MAX_MILADYS(); // replace .MAX_MILADYS with max supply call function
-        const current = await contract.standardMiladyCount(); // replace .standardMiladyCount with current supply call function
+        const max = await contract.presaleSupply(); // replace .MAX_MILADYS with max supply call function
+        const current = await contract.presaleCount(); // replace .standardMiladyCount with current supply call function
 
         setMaxSupply(max.toString());
         setCurrentSupply(current.toString());
@@ -31,7 +31,7 @@ const MintCounter = () => {
     getSupply();
 
     if (window.ethereum) {
-        return <p>{currentSupply}/{maxSupply}</p>;
+        return <p>{currentSupply - 1}/{maxSupply}</p>; // in this particular contract, there is no currentSupply function, so i'm using 'presaleCount - 1' to display amt of presale minted so far  
     } else {
         return <p>Install MetaMask</p>;
     }

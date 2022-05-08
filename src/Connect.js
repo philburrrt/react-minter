@@ -20,7 +20,7 @@ const Connect = ({accounts, setAccounts}) => {
             const network = await window.ethereum.request({ method: 'eth_chainId' });
             setChainId(network);
 
-            if (network !== '0x1'){
+            if (network !== '0x4'){ // Change required network here
                 setErrorMessage('Wrong network');
             } else {
                 setErrorMessage(null);

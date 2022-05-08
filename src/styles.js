@@ -11,12 +11,15 @@ export const MinterDIV = styledComponents.div`
     align-items: center;
     margin: 8px;
 `;
+
 export const IncrementButton = styledComponents.button`
     margin: 4px;
 `;
+
 export const MintButton = styledComponents.button`
     top: 4px;
 `;
+
 export const InputBox = styledComponents.input`
     ::-webkit-inner-spin-button{
         -webkit-appearance: none; 
@@ -32,10 +35,15 @@ export const InputBox = styledComponents.input`
 `;
 
 export const MintBox = styledComponents.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 95vh;
 `;
+
+export const P = styledComponents.p`
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+`

@@ -5,9 +5,9 @@ import * as styled from './styles';
 
 //script
 
-const contractAddress = '0x5Af0D9827E0c53E4799BB226655A1de152A425a5'; // NFT address (Miladys)
-const mintPrice = 0.08; // in ETH
-const maxMint = 3; // maximum NFTs minted (per tx tx, through UI only)
+const contractAddress = '0xA37383d111a35B29689055AFA92c79b58BB33497'; // NFT address (Miladys)
+const mintPrice = 0.06; // in ETH
+const maxMint = 50; // maximum NFTs minted (per tx tx, through UI only)
 
 const Mint = () => {
 
@@ -19,7 +19,7 @@ const Mint = () => {
             const signer = provider.getSigner();
             const contract = new ethers.Contract(contractAddress, abi, signer);
             try {
-                const response = await contract.mintMiladys(BigNumber.from(mintAmt), // replace .mintMiladys with mint function
+                const response = await contract.presaleMint(BigNumber.from(mintAmt), // replace .mintMiladys with mint function
                 {
                     value: ethers.utils.parseEther((mintPrice * mintAmt).toString()),
                 });
