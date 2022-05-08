@@ -1,6 +1,5 @@
-import { Web3Provider } from '@ethersproject/providers';
 import React, { useState } from 'react';
-import * as styled from './styles';
+import * as styles from './styles.js';
 
 
 const Connect = ({accounts, setAccounts}) => {
@@ -55,15 +54,15 @@ const Connect = ({accounts, setAccounts}) => {
     if (address == null) {
         return( 
             <div>
-                <button onClick={connectAccount}>{message}</button>
-                <styled.ErrorMsg>{errorMessage}</styled.ErrorMsg>
+                <styles.connectButton onClick={connectAccount}>{message}</styles.connectButton>
+                <styles.ErrorMsg>{errorMessage}</styles.ErrorMsg>
             </div>
         );
     } else{
         return(
             <div>
-                <button onClick={disconnectAccount}>{message}</button>
-                <styled.ErrorMsg>{errorMessage}</styled.ErrorMsg>
+                <styles.connectButton onClick={disconnectAccount}>{message}</styles.connectButton>
+                <styles.ErrorMsg>{errorMessage}</styles.ErrorMsg>
             </div>
         );
     };

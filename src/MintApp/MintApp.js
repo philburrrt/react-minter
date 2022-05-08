@@ -2,25 +2,25 @@ import { useState } from 'react';
 import Mint from './Mint';
 import Connect from './Connect';
 import MintCounter from './MintCounter'
-import * as styled from './styles';
+import * as styles from './styles.js';
 
 
 
-function App() {
+function MintApp() {
 
   const[accounts, setAccounts] = useState([]);
 
   return (
-    <styled.MintBox>
+    <styles.MintBox>
       <h1>MFDoomaverse</h1>
-      <styled.P>3000 passes @ 0.06e each</styled.P>
-      <styled.P>10000 passes @ 0.09e each</styled.P>
+      <styles.P>3000 passes @ 0.06e each</styles.P>
+      <styles.P>10000 passes @ 0.09e each</styles.P>
       <Mint accounts={accounts} setAccounts={setAccounts} />
       <Connect accounts={accounts} setAccounts={setAccounts} />
       <MintCounter />
-    </styled.MintBox>
+    </styles.MintBox>
   );
 
 };
 
-export default App;
+export default MintApp;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ethers, BigNumber } from 'ethers';
 import abi from './abi.json';
-import * as styled from './styles';
+import * as styled from './styles.js';
 
 //script
 
